@@ -1,0 +1,241 @@
+% Numbers the manuscript prints.
+%
+% Two regions. Everything between the markers below is regenerated from the
+% committed result files and is never hand-edited. Anything outside them is a
+% fixed convention this repository did not measure -- a value quoted from a
+% cited paper -- and is hand-edited and reviewed like any other source.
+%
+% Each generated block declares the population its macros are measured over: the
+% artifact the number came from, and the unit noun a count of that population
+% takes. Two population names resolving to one artifact is a test failure.
+
+%% POPULATION cited | artifact: npj Comput. Mater. 11, 300 (2025) | unit: rows
+% Quoted from Kim & Lee's article, not measured here.
+\newcommand{\npjSystems}{43}
+
+%% POPULATION citedRelease | artifact: AI Hub dataset 71339 and Matbench v0.1 | unit: releases
+% EMPD's release number, as its data description prints it, and the date on
+% which the local copy was downloaded, which the archive's directory records.
+% Matbench's version, as Dunn et al. name the suite that holds the task.
+\newcommand{\empdRelease}{1.0}
+\newcommand{\empdRetrieved}{23 December 2025}
+\newcommand{\exptGapVersion}{0.1}
+
+% ---- BEGIN GENERATED ----
+
+%% POPULATION npjDataset | artifact: data/npj/csv/Train.csv+data/npj/csv/Val.csv | unit: rows
+\newcommand{\npjDatasetRows}{71{,}633}
+
+%% POPULATION npjTrain | artifact: data/npj/csv/Train.csv | unit: rows
+\newcommand{\npjModelTrainRmse}{3.95}
+\newcommand{\npjPaperTrainRmse}{3.94}
+
+%% POPULATION npjVal | artifact: data/npj/csv/Val.csv | unit: rows
+\newcommand{\npjModelRSq}{0.9946}
+\newcommand{\npjModelRmse}{5.87}
+\newcommand{\npjPaperRmse}{5.86}
+\newcommand{\npjFeatureCount}{nine} % artifact: data/npj/csv/Val.csv | unit: features
+\newcommand{\npjCompositionFeatureCount}{six} % artifact: data/npj/csv/Val.csv | unit: descriptors
+\newcommand{\npjLookupRSq}{0.9924}
+\newcommand{\npjMargin}{+0.0022}
+\newcommand{\npjLookupRmse}{6.94}
+
+%% POPULATION empdRes | artifact: outputs/aihub/draws.json:resistivity | unit: rows
+\newcommand{\empdResBlockedHeldOutMin}{9\%}
+\newcommand{\empdResBlockedHeldOutMax}{20\%}
+\newcommand{\empdResRows}{58{,}937}
+\newcommand{\empdResSystems}{25} % artifact: outputs/aihub/draws.json:resistivity | unit: systems
+\newcommand{\empdResLookup}{0.887}
+\newcommand{\empdResModel}{0.946}
+\newcommand{\empdResMargin}{+0.059}
+\newcommand{\empdResMarginCI}{[+0.057, +0.061]}
+\newcommand{\empdResBlockedLookup}{$-$0.1}
+\newcommand{\empdResBlockedLookupCI}{[$-$0.6, 0.4]}
+\newcommand{\empdResBlocked}{0.1}
+\newcommand{\empdResBlockedCI}{[$-$0.2, 0.4]}
+\newcommand{\empdResExcess}{+0.8}
+\newcommand{\empdResExcessCI}{[+0.4, +1.1]}
+\newcommand{\empdResBlockedMin}{$-$0.936}
+\newcommand{\empdResBlockedMax}{+0.839}
+\newcommand{\empdResMarginMin}{+0.053}
+\newcommand{\empdResMarginMax}{+0.064}
+\newcommand{\empdResBlockedNegative}{three} % artifact: outputs/aihub/draws.json:resistivity | unit: partitions
+\newcommand{\empdResBlockedPositive}{seven} % artifact: outputs/aihub/draws.json:resistivity | unit: partitions
+\newcommand{\empdResValidationOnlySystems}{one} % artifact: outputs/aihub/draws.json:resistivity | unit: systems
+
+%% POPULATION empdHard | artifact: outputs/aihub/draws.json:hardness | unit: rows
+\newcommand{\empdHardBlockedHeldOutMin}{6\%}
+\newcommand{\empdHardBlockedHeldOutMax}{20\%}
+\newcommand{\empdHardRows}{901}
+\newcommand{\empdHardSystems}{22} % artifact: outputs/aihub/draws.json:hardness | unit: systems
+\newcommand{\empdHardLookup}{0.873}
+\newcommand{\empdHardModel}{0.921}
+\newcommand{\empdHardMargin}{+0.048}
+\newcommand{\empdHardMarginCI}{[+0.035, +0.063]}
+\newcommand{\empdHardMarginMin}{+0.017}
+\newcommand{\empdHardBlockedLookup}{$-$4}
+\newcommand{\empdHardBlockedLookupCI}{[$-$10, 0]}
+\newcommand{\empdHardBlocked}{$-$6}
+\newcommand{\empdHardBlockedCI}{[$-$12, $-$1]}
+\newcommand{\empdHardExcess}{+7}
+\newcommand{\empdHardExcessCI}{[+2, +13]}
+\newcommand{\empdHardBlockedMin}{$-$23.541}
+\newcommand{\empdHardBlockedMax}{+0.730}
+\newcommand{\empdHardBlockedMedian}{$-$1.354}
+\newcommand{\empdHardBlockedNegative}{nine} % artifact: outputs/aihub/draws.json:hardness | unit: partitions
+\newcommand{\empdHardMarginMax}{+0.103}
+\newcommand{\empdHardValidationOnlySystems}{four} % artifact: outputs/aihub/draws.json:hardness | unit: systems
+
+%% POPULATION empdAmorph | artifact: outputs/aihub/draws.json:amorphous | unit: rows
+\newcommand{\empdAmorphousRows}{945}
+
+%% POPULATION npjShared | artifact: outputs/aihub/structure.json:npj_shared_measurements | unit: rows
+\newcommand{\npjSharedRows}{2{,}405}
+\newcommand{\npjSharedOtherRows}{157}
+\newcommand{\npjSharedFactor}{0.45326}
+\newcommand{\npjFactorGridLow}{0.38}
+\newcommand{\npjFactorGridHigh}{0.52}
+\newcommand{\npjFactorGridStep}{0.00001}
+\newcommand{\npjSharedMinDecimals}{six} % artifact: outputs/aihub/structure.json:npj_shared_measurements | unit: decimals
+\newcommand{\npjSharedThicknessRatio}{1.000}
+\newcommand{\npjSharedThicknessRows}{2{,}289}
+
+%% POPULATION htemRes | artifact: outputs/htem/split.json:log10_resistivity | unit: rows
+\newcommand{\htemResRows}{8{,}628}
+\newcommand{\htemResLibraries}{257} % artifact: outputs/htem/split.json:log10_resistivity | unit: libraries
+\newcommand{\htemResRandomLookup}{0.84}
+\newcommand{\htemResRandomModel}{0.90}
+\newcommand{\htemResBlockedLookup}{0.14}
+\newcommand{\htemResBlockedLookupCI}{[$-$0.06, 0.31]}
+\newcommand{\htemResBlockedModel}{0.36}
+\newcommand{\htemResBlockedModelCI}{[0.20, 0.48]}
+\newcommand{\htemResMargin}{+0.057}
+\newcommand{\htemResMarginCI}{[+0.042, +0.075]}
+\newcommand{\htemResExcess}{+0.48}
+\newcommand{\htemResExcessCI}{[+0.37, +0.62]}
+\newcommand{\htemResBeyondHalf}{+0.28}
+\newcommand{\htemResBeyondHalfCI}{[+0.11, +0.48]}
+\newcommand{\htemResFallExcess}{+0.16}
+\newcommand{\htemResFallExcessCI}{[+0.04, +0.29]}
+\newcommand{\htemResFillFallLo}{+0.037}
+\newcommand{\htemResMarginMin}{+0.051}
+\newcommand{\htemResMarginMax}{+0.064}
+
+%% POPULATION htemGap | artifact: outputs/htem/split.json:direct_band_gap | unit: rows
+\newcommand{\htemGapRows}{5{,}264}
+\newcommand{\htemGapLibraries}{156} % artifact: outputs/htem/split.json:direct_band_gap | unit: libraries
+\newcommand{\htemGapRandomLookup}{0.66}
+\newcommand{\htemGapRandomLookupCI}{[0.56, 0.74]}
+\newcommand{\htemGapRandomLookupLo}{0.559}
+\newcommand{\htemGapRandomModel}{0.78}
+\newcommand{\htemGapBlockedLookup}{0.2}
+\newcommand{\htemGapBlockedLookupCI}{[$-$0.1, 0.4]}
+\newcommand{\htemGapBlockedModel}{0.47}
+\newcommand{\htemGapBlockedModelCI}{[0.33, 0.58]}
+\newcommand{\htemGapMargin}{+0.12}
+\newcommand{\htemGapMarginCI}{[+0.09, +0.16]}
+\newcommand{\htemGapExcess}{+0.19}
+\newcommand{\htemGapExcessCI}{[+0.10, +0.29]}
+\newcommand{\htemGapBeyondHalf}{+0.16}
+\newcommand{\htemGapBeyondHalfCI}{[$-$0.01, +0.37]}
+\newcommand{\htemGapFallExcess}{+0.19}
+\newcommand{\htemGapFallExcessCI}{[+0.06, +0.33]}
+\newcommand{\htemGapFillFallLo}{+0.018}
+\newcommand{\htemGapMarginMin}{+0.114}
+\newcommand{\htemGapMarginMax}{+0.130}
+\newcommand{\htemGapFirstMargin}{+0.13}
+\newcommand{\htemGapFirstMarginCI}{[+0.09, +0.17]}
+
+%% POPULATION htemResAblation | artifact: outputs/htem/ablation.json:log10_resistivity | unit: rows
+\newcommand{\htemResRandomTuned}{0.90}
+\newcommand{\htemResBlockedTuned}{0.39}
+\newcommand{\htemResExcessTuned}{+0.45}
+\newcommand{\htemResExcessTunedCI}{[+0.35, +0.56]}
+\newcommand{\htemResRandomBoosted}{0.90}
+\newcommand{\htemResBlockedBoosted}{0.33}
+\newcommand{\htemResExcessBoosted}{+0.51}
+\newcommand{\htemResExcessBoostedCI}{[+0.39, +0.64]}
+
+%% POPULATION htemGapAblation | artifact: outputs/htem/ablation.json:direct_band_gap | unit: rows
+\newcommand{\htemGapRandomTuned}{0.79}
+\newcommand{\htemGapBlockedTuned}{0.55}
+\newcommand{\htemGapExcessTuned}{+0.11}
+\newcommand{\htemGapExcessTunedCI}{[+0.03, +0.20]}
+\newcommand{\htemGapRandomBoosted}{0.79}
+\newcommand{\htemGapBlockedBoosted}{0.48}
+\newcommand{\htemGapExcessBoosted}{+0.18}
+\newcommand{\htemGapExcessBoostedCI}{[+0.09, +0.27]}
+
+%% POPULATION exptGap | artifact: outputs/expt_gap/control.json | unit: rows
+\newcommand{\exptGapRows}{4{,}604}
+\newcommand{\exptGapLookup}{0.26}
+\newcommand{\exptGapLookupCI}{[0.19, 0.32]}
+\newcommand{\exptGapModel}{0.48}
+\newcommand{\exptGapMargin}{+0.23}
+\newcommand{\exptGapMarginCI}{[+0.17, +0.29]}
+\newcommand{\exptGapMarginMin}{+0.193}
+\newcommand{\exptGapMarginMax}{+0.267}
+\newcommand{\exptGapFirstMargin}{+0.19}
+\newcommand{\exptGapFirstMarginCI}{[+0.13, +0.26]}
+\newcommand{\exptGapZeroShare}{53\%}
+\newcommand{\exptGapNonzeroRows}{2{,}154} % artifact: outputs/expt_gap/control.json | unit: compounds
+\newcommand{\exptGapNonzeroLookup}{0.51}
+\newcommand{\exptGapNonzeroLookupCI}{[0.45, 0.56]}
+\newcommand{\exptGapNonzeroLookupHi}{0.562}
+\newcommand{\exptGapNonzeroMargin}{+0.20}
+\newcommand{\exptGapNonzeroMarginCI}{[+0.14, +0.26]}
+
+%% POPULATION programs | artifact: reproduce/make_parameters.py | unit: sources
+\newcommand{\programCount}{two}
+
+%% POPULATION design | artifact: reproduce/ | unit: settings
+\newcommand{\mlpFirstLayer}{128} % artifact: reproduce/ | unit: units
+\newcommand{\mlpSecondLayer}{64} % artifact: reproduce/ | unit: units
+\newcommand{\mlpDropout}{0.3}
+\newcommand{\mlpEpochs}{200} % artifact: reproduce/ | unit: epochs
+\newcommand{\mlpPatience}{30} % artifact: reproduce/ | unit: epochs
+\newcommand{\mlpBatchSize}{32} % artifact: reproduce/ | unit: rows
+\newcommand{\mlpLearningRate}{$10^{-3}$}
+\newcommand{\mlpWeightDecay}{$10^{-5}$}
+\newcommand{\mlpLrFactor}{0.5}
+\newcommand{\mlpLrPatience}{10} % artifact: reproduce/ | unit: epochs
+\newcommand{\mlpMaxGradNorm}{1.0}
+\newcommand{\randomPairs}{five} % artifact: outputs/ (the pairs that the result files score) | unit: pairs
+\newcommand{\libraryDatasets}{three} % artifact: outputs/ (the pairs that the result files score) | unit: datasets
+\newcommand{\largestRandomMargin}{+0.12} % artifact: outputs/ (the pairs that the result files score) | unit: settings
+\newcommand{\largestRandomMarginPair}{HTEM-DB band gap} % artifact: outputs/ (the pairs that the result files score) | unit: settings
+\newcommand{\blockedPairs}{four} % artifact: outputs/ (the pairs that the result files score) | unit: pairs
+\newcommand{\blockedDatasets}{two} % artifact: outputs/ (the pairs that the result files score) | unit: datasets
+\newcommand{\splitDraws}{ten} % artifact: reproduce/ | unit: partitions
+\newcommand{\splitInits}{three} % artifact: reproduce/ | unit: times
+\newcommand{\heldOutShare}{15\%}
+\newcommand{\empdTrainShare}{70\%}
+\newcommand{\empdStopShare}{15\%}
+\newcommand{\npjCommit}{8c2f808}
+\newcommand{\htemFolds}{five} % artifact: reproduce/ | unit: folds
+\newcommand{\htemTrees}{200} % artifact: reproduce/ | unit: trees
+\newcommand{\htemNoTemperature}{$-$1}
+\newcommand{\htemNoTemperatureAlternatives}{0, $-$100 or $-$1000}
+\newcommand{\htemNoTemperatureShift}{0.0049} % artifact: outputs/htem/split.json | unit: settings
+\newcommand{\htemNoTemperatureLookupShift}{0.069} % artifact: outputs/htem/split.json | unit: settings
+\newcommand{\empdElementCount}{15} % artifact: reproduce/ | unit: elements
+\newcommand{\empdDescriptorCount}{six} % artifact: reproduce/ | unit: descriptors
+\newcommand{\htemTunedTrees}{400} % artifact: reproduce/ | unit: trees
+\newcommand{\htemSearchBudget}{25} % artifact: reproduce/ | unit: configurations
+\newcommand{\htemInnerFolds}{four} % artifact: reproduce/ | unit: folds
+\newcommand{\htemBoostRounds}{1{,}000} % artifact: reproduce/ | unit: rounds
+\newcommand{\htemForestFeatureShares}{0.05, 0.15, 0.3, 0.5 or 1.0}
+\newcommand{\htemForestMinLeaf}{1, 3, 10, 30 or 100}
+\newcommand{\htemBoostRates}{0.01, 0.03, 0.06, 0.12 or 0.25}
+\newcommand{\htemBoostLeaves}{3, 7, 15, 63 or 255}
+\newcommand{\htemBoostPenalty}{1.0}
+\newcommand{\bootstrapReplicates}{2{,}000} % artifact: reproduce/ | unit: resamples
+\newcommand{\bootstrapLevel}{95}
+
+%% POPULATION software | artifact: requirements.txt | unit: versions
+\newcommand{\numpyVersion}{1.26.4}
+\newcommand{\scipyVersion}{1.13.1}
+\newcommand{\sklearnVersion}{1.6.1}
+\newcommand{\torchVersion}{2.8.0}
+
+% ---- END GENERATED ----

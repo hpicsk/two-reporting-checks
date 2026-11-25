@@ -1,0 +1,237 @@
+{
+ "rows": {
+  "resistivity": 58937,
+  "amorphous": 945,
+  "hardness": 901
+ },
+ "systems": {
+  "resistivity": 25,
+  "amorphous": 28,
+  "hardness": 22
+ },
+ "systems_union": 39,
+ "comeasurement": {
+  "amorphous_rows_at_resistivity_coordinate": 533,
+  "amorphous_rows_with_identical_resistivity": 507,
+  "hardness_rows_at_resistivity_coordinate": 503,
+  "hardness_rows_sharing_a_resistivity_composition": 439
+ },
+ "archive": {
+  "splits": [
+   "Training",
+   "Validation"
+  ],
+  "rows": {
+   "resistivity": 58937,
+   "amorphous": 945,
+   "hardness": 901
+  },
+  "systems": {
+   "resistivity": 25,
+   "amorphous": 28,
+   "hardness": 22
+  },
+  "resolved_tokens": {
+   "Zi": "Zr"
+  }
+ },
+ "release": {
+  "library_files": {
+   "resistance_files": 71,
+   "resistance_libraries": 71,
+   "resistance_libraries_with_eds_and_thickness_files": 71
+  },
+  "split_order": {
+   "resistivity": {
+    "splits": {
+     "Training": {
+      "rows": 52388,
+      "numbers": [
+       1,
+       52388
+      ]
+     },
+     "Validation": {
+      "rows": 6549,
+      "numbers": [
+       52389,
+       58937
+      ]
+     }
+    },
+    "systems_in_one_split": {
+     "Training": 21,
+     "Validation": 1
+    },
+    "systems_in_every_split": 3
+   },
+   "amorphous": {
+    "splits": {
+     "Training": {
+      "rows": 840,
+      "numbers": [
+       1,
+       840
+      ]
+     },
+     "Validation": {
+      "rows": 105,
+      "numbers": [
+       841,
+       945
+      ]
+     }
+    },
+    "systems_in_one_split": {
+     "Training": 25,
+     "Validation": 2
+    },
+    "systems_in_every_split": 1
+   },
+   "hardness": {
+    "splits": {
+     "Training": {
+      "rows": 800,
+      "numbers": [
+       1,
+       800
+      ]
+     },
+     "Validation": {
+      "rows": 101,
+      "numbers": [
+       801,
+       1000
+      ]
+     }
+    },
+    "systems_in_one_split": {
+     "Training": 17,
+     "Validation": 4
+    },
+    "systems_in_every_split": 1
+   }
+  },
+  "resistance_factor": {
+   "median": 0.453,
+   "max_relative_deviation": 1.2864532772383086e-09
+  },
+  "columns": {
+   "resistivity": [
+    "Number",
+    "X",
+    "Y",
+    "Al",
+    "Ti",
+    "Cr",
+    "Fe",
+    "Co",
+    "Ni",
+    "Cu",
+    "Zr",
+    "Mo",
+    "W",
+    "Mn",
+    "Si",
+    "Mg",
+    "Resistance",
+    "Thickness",
+    "Resistivity",
+    "Ex_resistivity",
+    "ravg",
+    "delta",
+    "dHmix",
+    "ENavg",
+    "dEN",
+    "N",
+    "Compo"
+   ],
+   "amorphous": [
+    "Number",
+    "X",
+    "Y",
+    "Al",
+    "Ti",
+    "Cr",
+    "Fe",
+    "Co",
+    "Ni",
+    "Cu",
+    "Zr",
+    "Mo",
+    "W",
+    "Mn",
+    "Si",
+    "Mg",
+    "Resistance",
+    "Thickness",
+    "Resistivity",
+    "Ex_resistivity",
+    "ravg",
+    "delta",
+    "dHmix",
+    "Amorphous",
+    "ENavg",
+    "dEN",
+    "N",
+    "Compo"
+   ],
+   "hardness": [
+    "Number",
+    "X",
+    "Y",
+    "Al",
+    "Ti",
+    "Cr",
+    "Fe",
+    "Co",
+    "Ni",
+    "Cu",
+    "Zr",
+    "Mo",
+    "W",
+    "Mn",
+    "Si",
+    "Mg",
+    "Re",
+    "Ta",
+    "Thickness",
+    "Hardness",
+    "Modulus",
+    "ravg",
+    "delta",
+    "dHmix",
+    "ENavg",
+    "dEN",
+    "N",
+    "Compo"
+   ]
+  }
+ },
+ "npj_shared_measurements": {
+  "npj_rows": 71633,
+  "raw_values_compared": 10659,
+  "raw_libraries_compared": 40,
+  "min_decimals": 6,
+  "factor_grid": [
+   0.38,
+   0.52,
+   1e-05
+  ],
+  "best_factor": 0.45326,
+  "rows_at_best_factor": 2405,
+  "most_rows_at_another_factor": 157,
+  "factor_of_most_rows_at_another": 0.42864,
+  "median_rows_over_the_grid": 0.0,
+  "libraries_reached": {
+   "154-161-Resistance-NiFeCr.csv": 1210,
+   "150-157-Resistance-CoCrTi.csv": 1195
+  },
+  "rows_with_an_empd_thickness": 2289,
+  "thickness_ratio_npj_to_empd": {
+   "median": 1.0000481675827295,
+   "p5": 0.9935175538980869,
+   "p95": 1.14981107842643
+  }
+ }
+}

@@ -1,0 +1,161 @@
+\documentclass[11pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{xr}
+\externaldocument{main}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\input{parameters}
+
+\usepackage{titlesec}
+\renewcommand{\thesection}{S\arabic{section}}
+\titleformat{\section}{\normalfont\large\bfseries}{Section~\thesection.}{0.5em}{}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\thefigure}{S\arabic{figure}}
+\renewcommand{\thetable}{S\arabic{table}}
+
+\title{Supplementary Information for\\
+       \emph{Two reporting checks for machine learning accuracy on
+       combinatorial materials libraries}}
+\author{Sungwoo Kang\\
+  Department of Electrical and Computer Engineering, Korea University,\\
+  Seoul, Republic of Korea\\[2ex]
+  Jong-Kook Kim\\
+  School of Electrical Engineering, Korea University,\\
+  Seoul, Republic of Korea}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section{Spread of scores across the partitions}
+\label{sec:esi-draw-spread}
+
+The range of a margin across the \splitDraws\ random partitions shows how far
+one partition's margin can lie from the mean over them, the value that the main
+text reports on EMPD, HTEM-DB and Matbench. On EMPD hardness, that
+mean is \empdHardMargin\ and the partitions give margins from
+\empdHardMarginMin\ to \empdHardMarginMax, so one partition's margin can be
+more than twice the mean. The margin varies less across the random partitions
+on the other pairs of EMPD and HTEM-DB and on Matbench, from \empdResMarginMin\ to \empdResMarginMax\ on
+EMPD resistivity, from \htemResMarginMin\ to \htemResMarginMax\ on HTEM-DB
+resistivity, from \htemGapMarginMin\ to \htemGapMarginMax\ on HTEM-DB band gap
+and from \exptGapMarginMin\ to \exptGapMarginMax\ on Matbench.
+
+On Matbench, the lookup scores \exptGapLookup\
+\exptGapLookupCI\ (bracketed ranges are \bootstrapLevel\% percentile bootstrap
+intervals), below the \htemGapRandomLookup\ \htemGapRandomLookupCI\ on HTEM-DB band
+gap. Because \exptGapZeroShare\ of Matbench's band gaps are zero and no HTEM-DB
+band gap is, we also draw \splitDraws\ random partitions of the
+\exptGapNonzeroRows\ Matbench compounds whose gap exceeds zero, each from the seed
+of a random partition of the full task, and score the lookup and the forest on
+them. Under these partitions, however, the lookup scores \exptGapNonzeroLookup\
+\exptGapNonzeroLookupCI. The upper end of that interval, \exptGapNonzeroLookupHi,
+exceeds the lower end of HTEM-DB band gap's interval, \htemGapRandomLookupLo, so the
+zero gaps, and not only the absence of libraries, can lower the lookup's score on
+Matbench.
+
+The Matbench margin's interval lies
+above that of HTEM-DB band gap, the pair that Matbench matches
+(Table~\ref{tab:main}a of the main text). However, we first compared the two margins on a
+single random partition, the first of the \splitDraws. We moved the comparison
+to the means over the \splitDraws\ partitions only after the intervals of the two margins overlapped on
+that partition, so on Matbench the wider margin is not established. On that
+partition, the Matbench margin is \exptGapFirstMargin\ \exptGapFirstMarginCI\
+and that of HTEM-DB band gap is \htemGapFirstMargin\ \htemGapFirstMarginCI. The first partition gives Matbench its smallest margin and HTEM-DB band gap
+one of its two largest, which explains why the two intervals overlap on it but not
+over the means. On the Matbench compounds whose gap exceeds zero, the margin is \exptGapNonzeroMargin\ \exptGapNonzeroMarginCI, an interval that overlaps HTEM-DB band gap's interval even over the means, so
+on those compounds the wider margin is not established either.
+
+On EMPD, the model's blocked $R^2$ varies so widely across the \splitDraws\
+blocked partitions that its mean describes no typical partition, although the
+mean still compares the model with a constant prediction of the test rows' mean
+target. The blocked $R^2$ ranges from \empdResBlockedMin\ to
+\empdResBlockedMax\ on resistivity and from \empdHardBlockedMin\ to
+\empdHardBlockedMax\ on hardness, partly because each partition's $R^2$ is
+computed over a different set of test rows, relative to the variance of their
+targets. Because of this spread, the model's mean on hardness in
+Table~\ref{tab:main}b of the main text, \empdHardBlocked, lies far below its
+median of \empdHardBlockedMedian, so the mean depends mostly on the partitions
+with the lowest $R^2$. The model's blocked $R^2$ on hardness lies below zero, the
+$R^2$ of a constant prediction of the test rows' mean, under
+\empdHardBlockedNegative\ of the \splitDraws\ partitions, so under those
+partitions the model predicts the hardness of the alloy systems excluded from
+training less accurately than a constant prediction of the test rows' mean
+hardness. The model's blocked $R^2$ on resistivity lies below zero under
+\empdResBlockedNegative\ partitions and above zero under the other
+\empdResBlockedPositive.
+
+\section{Tuned models on the HTEM-DB blocked partition}
+\label{sec:esi-posthoc}
+
+To find whether the positive excess on HTEM-DB depends on the untuned forest, we
+replace it with two models tuned inside their training folds, a random forest and
+a gradient-boosting machine, both from scikit-learn. Each tuned model splits the
+rows of its training folds into \htemInnerFolds\ inner folds and chooses among
+\htemSearchBudget\ configurations by their scores on one of the inner folds. The
+gradient-boosting machine also chooses on that inner fold its number of boosting
+rounds, at most \htemBoostRounds. Unlike the untuned forest, which keeps its
+settings under the blocked partition, each tuned model chooses its configuration
+again under that partition, on inner folds that contain whole libraries. The
+tuned forest averages \htemTunedTrees\ decision trees. Its configurations combine
+a share of \htemForestFeatureShares\ of the features considered at each split with
+a minimum of \htemForestMinLeaf\ rows per leaf. The configurations of the
+gradient-boosting machine combine a learning rate of \htemBoostRates\ with at most
+\htemBoostLeaves\ leaves per tree. Every configuration of the gradient-boosting
+machine sets the $L_2$ regularization to \htemBoostPenalty. The choice of boosting
+rounds and the grids correct two faults of an earlier version, found after that
+version had reported its excess, so these corrections are post hoc. Under the
+blocked partition, each tuned model chooses in some folds a configuration on an
+edge of its grid, so a setting beyond the grid could change its excess.
+
+The HTEM-DB excess is positive on both properties under either tuned model.
+Every interval for that excess excludes zero, including that of the band-gap
+excess, which the tuned forest lowers from \htemGapExcess\ under the untuned
+forest to \htemGapExcessTuned\ (Table~\ref{tab:ablation}).
+
+\begin{table}[htbp] \small \caption{Three models' scores under the HTEM-DB
+random and blocked partitions, on the main text's rows and folds. Bracketed ranges are
+\bootstrapLevel\% percentile bootstrap intervals over \bootstrapReplicates\
+resamples of whole libraries.}
+\label{tab:ablation} \input{tables/ablation} \end{table}
+
+\section{Settings of the protocol}
+\label{sec:esi-settings}
+
+Each check compares scores within one dataset, so the checks do not need the
+same model on every dataset. On Kim and Lee's dataset, we recompute their network's validation $R^2$ from their training and
+validation files rather than quoting it, so that the network and the lookup are
+scored on identical rows. On
+those rows, the network's RMSE is \npjModelRmse~$\mu\Omega\cdot$cm and the
+lookup's \npjLookupRmse~$\mu\Omega\cdot$cm, so, near an $R^2$ of one, RMSE
+distinguishes the network from the lookup more clearly than $R^2$ does.
+
+No divisor in a range around \npjSharedFactor, from \npjFactorGridLow\ to
+\npjFactorGridHigh\ in steps of \npjFactorGridStep, reproduces more than
+\npjSharedOtherRows\ of Kim and Lee's rows, apart from \npjSharedFactor\ itself,
+so \npjSharedFactor\ is the conversion factor that relates Kim and Lee's
+resistivity to EMPD's resistance. EMPD's raw files record a thickness at the
+positions of \npjSharedThicknessRows\ of the \npjSharedRows\ rows that it
+reproduces, where the median ratio of Kim and Lee's thickness to EMPD's is
+\npjSharedThicknessRatio.
+
+EMPD's release splits each table in row order, so a model trained on the
+training part is tested partly on alloy systems excluded from that training,
+because the validation part alone contains \empdResValidationOnlySystems\ of the
+resistivity alloy systems and \empdHardValidationOnlySystems\ of the hardness
+systems. That split is therefore not a random partition of the rows.
+
+On HTEM-DB, any value below every recorded deposition temperature would serve
+as the value of a row that records none, because replacing \htemNoTemperature\ by
+\htemNoTemperatureAlternatives\ changes each HTEM-DB margin and excess by at most
+\htemNoTemperatureShift\ in $R^2$ and each blocked-partition lookup score by at
+most \htemNoTemperatureLookupShift\ in $R^2$. On both properties, the lookup's
+$R^2$ still falls further than the model's under the blocked partition whichever
+of these values replaces \htemNoTemperature. Under each of these values, the
+interval of the lookup's fall minus the model's has a lower endpoint of at least
+\htemResFillFallLo\ on resistivity and \htemGapFillFallLo\ on band gap.
+
+\end{document}

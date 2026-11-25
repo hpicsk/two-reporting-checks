@@ -1,0 +1,62 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.venv/
+venv/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# LaTeX build artifacts
+*.aux
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.out
+*.log
+
+# Local Claude state
+.claude/
+
+# Third-party corpora, each fetched by reproduce/fetch_*.py and pinned to the
+# upstream commit, checksum or query that produced it. The fetched copies are
+# tracked, so the analysis runs offline, except Kim and Lee's files: their
+# repository states no licence, so a clone fetches them at the pinned commit.
+data/npj/
+
+# EMPD never enters the repository. The AI Hub archive cannot be redistributed,
+# and the scripts that read it take its location from METAL_AIHUB_PATH. The
+# directory is ignored so that a copy placed here is not published.
+data/aihub/
+
+# Third-party article PDFs, read while writing and not ours to redistribute.
+*.pdf
+!paper/figures/*.pdf
+
+# Correspondence with the journal, which reaches the editor through the
+# submission system and is not part of what the availability statement publishes.
+paper/submission/
+
+# Working records whose result is an edit to this repository rather than a
+# file in it. Ignored from the first write, not untracked at submission: the
+# availability statement points every reader at the repository, whose log keeps
+# a deleted file readable at every commit that carried it.
+_internal/
+
+# The journal's own author guidelines, pasted while sizing the manuscript. They
+# are the publisher's to distribute.
+guideline
+
+# LaTeX build output
+paper/main.pdf
+paper/esi.pdf

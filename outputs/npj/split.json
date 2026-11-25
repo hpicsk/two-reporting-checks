@@ -1,0 +1,74 @@
+{
+ "n_train": 64469,
+ "n_val": 7164,
+ "val_share": 0.10000977203244314,
+ "val_target_sd": 79.82061209513114,
+ "features": [
+  "t",
+  "depo",
+  "r",
+  "del_r",
+  "del_EN",
+  "S",
+  "H",
+  "VEC",
+  "Th"
+ ],
+ "composition_features": [
+  "r",
+  "del_r",
+  "del_EN",
+  "S",
+  "H",
+  "VEC"
+ ],
+ "released_columns": [
+  "t",
+  "depo",
+  "r",
+  "del_r",
+  "del_EN",
+  "S",
+  "H",
+  "VEC",
+  "Th",
+  "resistivity"
+ ],
+ "paper": {
+  "train_rmse": 3.94,
+  "val_rmse": 5.86,
+  "val_r2_printed": "0.99"
+ },
+ "model": {
+  "train": {
+   "rmse": 3.9455226576238536,
+   "r2": 0.9974940398673996
+  },
+  "val": {
+   "rmse": 5.8686450665053895,
+   "r2": 0.9945936244906793
+  },
+  "hidden_layers": 3,
+  "hidden_units": 512
+ },
+ "lookup": {
+  "all_features": {
+   "rmse": 6.941589463691102,
+   "r2": 0.9924360548843737,
+   "n_features": 9
+  },
+  "composition_only": {
+   "rmse": 15.282895242591847,
+   "r2": 0.9633358356603587,
+   "n_features": 6
+  }
+ },
+ "criteria": {
+  "N1": {
+   "best_lookup_r2": 0.9924360548843737,
+   "lands_at": 0.95,
+   "bound_at": 0.5,
+   "verdict": "LANDS"
+  }
+ }
+}

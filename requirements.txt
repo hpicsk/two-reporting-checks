@@ -1,0 +1,13 @@
+# The versions under which the scripts in reproduce/ regenerate the committed
+# result files, on Python 3.12. The Methods print the versions of the four
+# libraries that run the lookup and the models, read from this file by
+# reproduce/make_parameters.py.
+numpy==1.26.4
+scipy==1.13.1
+scikit-learn==1.6.1
+torch==2.8.0
+pandas==2.2.3
+h5py==3.13.0
+pymatgen==2026.5.4
+matplotlib==3.10.6
+pytest==8.3.4

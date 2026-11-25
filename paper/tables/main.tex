@@ -1,0 +1,28 @@
+% Generated from the committed result files; not hand-edited.
+\textbf{(a) Under a random partition of the rows.}\\[3pt]
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrlrrl}
+\hline
+dataset and property & rows & group & lookup $R^2$ & model $R^2$ & model $-$ lookup \\
+\hline
+Kim \& Lee 2025, resistivity & \npjDatasetRows & \npjSystems\ systems, not recorded & \npjLookupRSq & \npjModelRSq & \npjMargin \\
+EMPD, resistivity & \empdResRows & \empdResSystems\ systems & \empdResLookup & \empdResModel & \empdResMargin~\empdResMarginCI \\
+EMPD, hardness & \empdHardRows & \empdHardSystems\ systems & \empdHardLookup & \empdHardModel & \empdHardMargin~\empdHardMarginCI \\
+HTEM-DB, resistivity & \htemResRows & \htemResLibraries\ libraries & \htemResRandomLookup & \htemResRandomModel & \htemResMargin~\htemResMarginCI \\
+HTEM-DB, band gap & \htemGapRows & \htemGapLibraries\ libraries & \htemGapRandomLookup & \htemGapRandomModel & \htemGapMargin~\htemGapMarginCI \\
+Matbench, band gap & \exptGapRows & no libraries & \exptGapLookup & \exptGapModel & \exptGapMargin~\exptGapMarginCI \\
+\hline
+\end{tabular*}
+
+\vspace{10pt}
+
+\textbf{(b) Under a blocked partition.}\\[3pt]
+\begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}lrll}
+\hline
+dataset and property & lookup $R^2$ & model $R^2$ & excess \\
+\hline
+EMPD, resistivity & \empdResBlockedLookup~\empdResBlockedLookupCI & \empdResBlocked~\empdResBlockedCI & \empdResExcess~\empdResExcessCI \\
+EMPD, hardness & \empdHardBlockedLookup~\empdHardBlockedLookupCI & \empdHardBlocked~\empdHardBlockedCI & \empdHardExcess~\empdHardExcessCI \\
+HTEM-DB, resistivity & \htemResBlockedLookup~\htemResBlockedLookupCI & \htemResBlockedModel~\htemResBlockedModelCI & \htemResExcess~\htemResExcessCI \\
+HTEM-DB, band gap & \htemGapBlockedLookup~\htemGapBlockedLookupCI & \htemGapBlockedModel~\htemGapBlockedModelCI & \htemGapExcess~\htemGapExcessCI \\
+\hline
+\end{tabular*}
